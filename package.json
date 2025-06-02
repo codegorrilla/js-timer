@@ -1,0 +1,16 @@
+{
+  "name": "js-timer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.89.1",
+    "vite": "^6.3.5"
+  }
+}
