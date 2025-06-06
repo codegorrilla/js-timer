@@ -1,10 +1,10 @@
 import '../scss/app.scss';
 
 let timerInterval;
-let timeLeft = 60; // Initial time in seconds
+let timeLeft = 300; // Initial time in seconds
 
 const timerDisplay = document.getElementById('timer');
-const startButton = document.getElementById('startButton');
+//const startButton = document.getElementById('startButton');
 const resetButton = document.getElementById('resetButton');
 
 function updateDisplay() {
@@ -33,11 +33,28 @@ function startTimer() {
 function resetTimer() {
 	clearInterval(timerInterval);
 	timerInterval = null;
-	timeLeft = 60;
+	timeLeft = 300;
 	updateDisplay();
 }
 
-startButton.addEventListener('click', startTimer);
-resetButton.addEventListener('click', resetTimer);
+//startButton.addEventListener('click', startTimer);
+
+//window.onload = startTimer();
+const input = document.querySelector('input');
+
+input.addEventListener('change', () => {
+	const showInput = document.createElement('div');
+
+	showInput.innerHTML = input.value;
+
+	document.body.insertBefore(showInput, input);
+
+	input.value = '';
+});
+
+input.addEventListener('keyup', startTimer);
+input.addEventListener('keydown', resetTimer);
+
+//resetButton.addEventListener('click', resetTimer);
 
 updateDisplay(); // Initial display
